@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../images/bg.jpg') ;
+    background-repeat: no-repeat;
+    
+}
+
+.panel {
+    position: absolute;
+    width: 12rem;
+    padding: 0.8rem ;
+    bottom: 0;
+    border-top: solid 1px #fff;
+    background: #fff;
+    opacity: 7s;
+}
+
+.points {
+    float: left;
+
+}
+.chronometer {
+    float: left;
+    font-weight: 2rem;
+    font-size: 1.5rem;
+}
+.mosquito1 {
+    width: 4rem;
+    height: 4rem;
+}
+
+.mosquito2 {
+    width: 6rem;
+    height: 6rem;
+}
+
+.mosquito3 {
+    width: 8rem;
+    height: 8rem;
+}
+
+.rightSide {
+    transform: scaleX(-1);
+}
+.leftSide {
+    transform: scaleX(1);
+}

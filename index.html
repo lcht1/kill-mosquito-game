@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mata Mosquito - GAME</title>
+    <title>Kill Mosquito - GAME</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="script.js"></script>
 </head>
-<body>
-    
-</body>
+<body onresize="adjustScreenSize()">
+    <div class="panel">
+        <div class="points">
+            <img src="images/empty_heart.png">
+            <img src="images/full_heart.png">
+            <img src="images/full_heart.png">
+
+        </div>
+
+        <div class="chronometer">
+            Time left: 
+        </div>
+    </div>
+    <script>
+        randomPosition()
+        setInterval(() => {
+            randomPosition()
+        }, 1000)
+    </script>
 </html>
