@@ -1,6 +1,7 @@
 let height
 let width
 let mosquito
+let points = 1
 function adjustScreenSize() {
     height = window.innerHeight
     width = window.innerWidth
@@ -12,8 +13,17 @@ adjustScreenSize()
 function randomPosition() {
 
     //removing the last mosquito(if it exists)
-    if(document.getElementById('mosquito')){
+    if (document.getElementById('mosquito')) {
         document.getElementById('mosquito').remove()
+
+
+
+        if (points > 3) {
+            window.location.href = "src/game_over.html"
+        } else {
+            document.getElementById('h' + points).src = "images/empty_heart.png"
+            points++
+        }
 
     }
 
@@ -30,7 +40,10 @@ function randomPosition() {
     mosquito.src = 'images/mosquito.png'
     mosquito.className = `${randomSize()} ${randomSide()}`
     mosquito.id = 'mosquito'
-    
+    mosquito.onclick = function () {
+        this.remove()
+    }
+
     // setting its position deppendind on the random positions
     mosquito.style.position = 'absolute'
     mosquito.style.left = `${positionX}px`
@@ -40,6 +53,7 @@ function randomPosition() {
     console.log(randomSide())
 }
 
+// Appears different sizes of mosquitos, deppending on the random class
 function randomSize() {
     let randomClass = Math.ceil(Math.random() * 3)
     console.log(randomClass)
@@ -56,6 +70,7 @@ function randomSize() {
 
 }
 
+// Random side of the mosquito
 function randomSide() {
     let randomClass = Math.ceil(Math.random() * 2)
     console.log(randomClass)
@@ -68,3 +83,5 @@ function randomSide() {
 
     }
 }
+
+//Controlling points
