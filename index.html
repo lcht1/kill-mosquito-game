@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kill Mosquito - GAME</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="script.js"></script>
-</head>
-<body onresize="adjustScreenSize()">
-    <div class="panel">
-        <div class="points">
-            <img id="h1" src="images/full_heart.png">
-            <img id="h2" src="images/full_heart.png">
-            <img  id="h3"src="images/full_heart.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>Home Page</title>
 
-        </div>
-
-        <div class="chronometer">
-            Time left: <span id="chronometer"></span>
-
-        </div>
-    </div>
     <script>
-        document.getElementById('chronometer').innerHTML = time 
-
-        randomPosition()
-        let createMosquito = setInterval(() => {
-            randomPosition()
-        }, 2000)
+      function startGame() {
+        let level = document.getElementById("level").value;
+        if (level == "") {
+          alert("Please, select a level!");
+          return false;
+        } else{
+            window.location.href = './src/app.html?' + level
+        }
+      }
     </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <img src="../images/game.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <div class="mb-2">
+              <select class="form-control" id="level">
+                <option value="">-- Select the level --</option>
+                <option value="normal">Normal</option>
+                <option value="hard">Hard</option>
+                <option value="superHard">Super Hard</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <button onclick="startGame()" class="btn btn-danger btn-lg">
+              Play
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

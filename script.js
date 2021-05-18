@@ -3,6 +3,17 @@ let width
 let mosquito
 let points = 1
 let time = 5
+let createMosquitoTime = 1500
+let level = window.location.search
+level = level.replace('?', '')
+
+if(level === 'normal') {
+    createMosquitoTime = 1500
+} else if( level === 'hard'){
+    createMosquitoTime = 1000
+} else if(level === 'superHard'){
+    createMosquitoTime = 750
+}
 function adjustScreenSize() {
     height = window.innerHeight
     width = window.innerWidth
@@ -15,7 +26,7 @@ let chronometer = setInterval(() => {
     if(time < 0){
         clearInterval(chronometer)
         clearInterval(createMosquito)
-        window.location.href = "./src/win.html"
+        window.location.href = "./win.html"
     } else{
     document.getElementById('chronometer').innerHTML = time 
     }
@@ -30,9 +41,9 @@ function randomPosition() {
 
 
         if (points > 3) {
-            window.location.href = "src/game_over.html"
+            window.location.href = "./game_over.html"
         } else {
-            document.getElementById('h' + points).src = "images/empty_heart.png"
+            document.getElementById('h' + points).src = "../images/empty_heart.png"
             points++
         }
 
@@ -48,7 +59,7 @@ function randomPosition() {
 
     // creating HTML element
     mosquito = document.createElement('img')
-    mosquito.src = 'images/mosquito.png'
+    mosquito.src = '../images/mosquito.png'
     mosquito.className = `${randomSize()} ${randomSide()}`
     mosquito.id = 'mosquito'
     mosquito.onclick = function () {

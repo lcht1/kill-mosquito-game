@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kill Mosquito - GAME</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../script.js"></script>
+</head>
+<body onresize="adjustScreenSize()">
+    <div class="panel">
+        <div class="points">
+            <img id="h1" src="../images/full_heart.png">
+            <img id="h2" src="../images/full_heart.png">
+            <img  id="h3"src="../images/full_heart.png">
+
+        </div>
+
+        <div class="chronometer">
+            Time left: <span id="chronometer"></span>
+
+        </div>
+    </div>
+    <script>
+        document.getElementById('chronometer').innerHTML = time 
+
+        randomPosition()
+        let createMosquito = setInterval(() => {
+            randomPosition()
+        }, createMosquitoTime)
+    </script>
+</html>
