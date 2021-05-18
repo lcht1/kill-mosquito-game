@@ -2,8 +2,9 @@ let height
 let width
 let mosquito
 let points = 1
-let time = 5
+let time = 15
 let createMosquitoTime = 1500
+
 let level = window.location.search
 level = level.replace('?', '')
 
@@ -17,7 +18,6 @@ if(level === 'normal') {
 function adjustScreenSize() {
     height = window.innerHeight
     width = window.innerWidth
-    // console.log(width, height)
 }
 
 adjustScreenSize()
@@ -33,8 +33,6 @@ let chronometer = setInterval(() => {
 }, 1000)
 
 function randomPosition() {
-
-    //removing the last mosquito(if it exists)
     if (document.getElementById('mosquito')) {
         document.getElementById('mosquito').remove()
 
@@ -55,7 +53,7 @@ function randomPosition() {
     positionX = positionX < 0 ? 0 : positionX
     positionY = positionY < 0 ? 0 : positionY
 
-    // console.log(positionX, positionY)
+    
 
     // creating HTML element
     mosquito = document.createElement('img')
@@ -72,13 +70,12 @@ function randomPosition() {
     mosquito.style.top = `${positionY}px`
     document.body.appendChild(mosquito)
 
-    // console.log(randomSide())
 }
 
 // Appears different sizes of mosquitos, deppending on the random class
 function randomSize() {
     let randomClass = Math.ceil(Math.random() * 3)
-    // console.log(randomClass)
+   
     switch (randomClass) {
         case 1:
             return 'mosquito1'
@@ -92,10 +89,8 @@ function randomSize() {
 
 }
 
-// Random side of the mosquito
 function randomSide() {
     let randomClass = Math.ceil(Math.random() * 2)
-    // console.log(randomClass)
     switch (randomClass) {
         case 1:
             return 'rightSide'
@@ -105,5 +100,3 @@ function randomSide() {
 
     }
 }
-
-//Controlling points

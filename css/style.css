@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    cursor: url(../images/kill_mosquito.png) 30 30, auto;
+}
+
 body {
     background-image: url('../images/bg.jpg') ;
     background-repeat: no-repeat;
@@ -18,9 +22,9 @@ body {
     width: 12rem;
     padding: 0.8rem ;
     bottom: 0;
-    border-top: solid 1px #fff;
-    background: #fff;
-    opacity: 7s;
+    /* border-top: solid 1px #fff; */
+    background: rgba(256,256,256,.3);
+    opacity: 7;
 }
 
 .points {
