@@ -18,12 +18,15 @@
         </div>
 
         <div class="chronometer">
-            Time left: 
+            Time left: <span id="chronometer"></span>
+
         </div>
     </div>
     <script>
+        document.getElementById('chronometer').innerHTML = time 
+
         randomPosition()
-        setInterval(() => {
+        let createMosquito = setInterval(() => {
             randomPosition()
         }, 2000)
     </script>
